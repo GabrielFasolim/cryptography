@@ -7,23 +7,25 @@ letrasParaNumeros = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H'
 
 
 
-def criptografarCaracter (frase):
-    palavra = input("Digite uma palavra")
-    mensagem = palavra
-    for i in frase:
-        mensagem = mensagem + chr(ord(i)) + 5
-        return mensagem
-    
+def criptografarPalavra(word):
    
+    listinha = list(word)
+    palavrinha = []
+    for i in listinha:
+        palavrinha.append(letrasParaNumeros[i])
+
+    return(map(palavrinha))
 
 
-#def criptografarNumero(){
-    palavra = input("Digite uma palavra para ser alterada para número")
-#}
 
-#def criptografaBinario(){
-    palavra = input("Digite uma palavra para ser alterada para binario")
-#}
+
+def criptografarNumero(word):
+    lst = list(word)
+
+    for i in range(word):
+        criptografarNumero = lst + letrasParaNumeros
+
+    return(criptografarNumero)
 
 
 
@@ -45,11 +47,14 @@ if metodoCripto == 1:
     palavraCripto = int(input("Digite qual tipo de criptografia deseja: "))
     if palavraCripto == 1:
         print('O método desejado foi Mudança de Caracter')
-        print(criptografarCaracter(frase = 1))
+        word = input('digite uma palavra')
+        print(criptografarPalavra(word))
     elif palavraCripto == 2:
         print('O método desejado foi Binário')
     elif palavraCripto == 3:
         print('O metodo desejado foi Número')
+        word = input('digite:')
+        print(criptografarNumero(word))
 elif metodoCripto == 2:
     print('1- Alterar numeros da senha')
 
